@@ -91,7 +91,7 @@
     $.fn.passwordStrength = function(options) {
         var settings = {
             classes: ['veryWeakPassword', 'weakPassword', 'goodPassword', 'strongPassword', 'veryStrongPassword'],
-            labels: ['Weak', 'Very weak', 'Good', 'Strong', 'Very strong'],
+            labels: ['Very Weak', 'Weak', 'Good', 'Strong', 'Very strong'],
             onScore: function(e, elem, score) {
               var el = $(elem);
               el.next('label').detach();
