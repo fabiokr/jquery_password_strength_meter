@@ -1,7 +1,11 @@
+/**
+ * Jquery password strength meter.
+ * Author: Fabio Kreusch fabio@lelak.com.br, fabio@kreusch.com.br
+ */
 (function($){
 
     var methods = {
-    
+        //Original score calculation from http://www.geekwisdom.com/js/passwordmeter.js
         checkScore : function(password) {
             var intScore   = 0
 
@@ -47,7 +51,6 @@
                 intScore = (intScore+5);
             }
 
-
             // COMBOS
             if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
                 intScore = (intScore+2);
@@ -88,7 +91,11 @@
     $.fn.passwordStrength = function(options) {
         var settings = {
             classes: ['veryWeakPassword', 'weakPassword', 'goodPassword', 'strongPassword', 'veryStrongPassword'],
+            labels: ['Weak', 'Very weak', 'Good', 'Strong', 'Very strong'],
             onScore: function(e, elem, score) {
+              var el = $(elem);
+              el.next('label').detach();
+              el.after('<label for="'+el.attr('id')+'">'+settings.labels[score]+'</label>');  
             }
         };
 

@@ -14,19 +14,7 @@
         <script language="javascript" src="../src/jquery.passwordStrengthMeter.js"></script>
         <script language="javascript">
             $(function(){
-                $('#password').passwordStrength({
-                    onScore: function(e, elem, score) {
-                        result = null;
-                        switch(score) {
-                            case 0: result = 'Very weak'; break;
-                            case 1: result = 'Weak'; break;
-                            case 2: result = 'Good'; break;
-                            case 3: result = 'Strong'; break;
-                            case 4: result = 'Very strong'; break;
-                        }
-                        $('#password-strength').html(result);
-                    }
-                });
+                $('#password').passwordStrength();
             });
         </script>
     </body>
