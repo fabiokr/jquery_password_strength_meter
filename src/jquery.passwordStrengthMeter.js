@@ -95,7 +95,7 @@
             onScore: function(e, elem, score) {
               var el = $(elem);
               el.next('label').detach();
-              el.after('<label for="'+el.attr('id')+' class="'+settings.classes[score]+'"">'+settings.labels[score]+'</label>');  
+              el.after('<label for="'+el.attr('id')+'" class="'+settings.classes[score]+'"">'+settings.labels[score]+'</label>');  
             }
         };
 
